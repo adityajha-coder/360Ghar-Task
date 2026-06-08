@@ -6,7 +6,10 @@ export default function ComparisonModal({ properties, onClose }) {
     { label: "Type", key: "type" },
     { label: "Configuration", fn: (p) => `${p.bhk} BHK` },
     { label: "Area", fn: (p) => `${p.area} sq ft` },
-    { label: "Price / sq ft", fn: (p) => `${Math.round(p.price / p.area).toLocaleString("en-IN")}` },
+    {
+      label: "Price / sq ft",
+      fn: (p) => `${Math.round(p.price / p.area).toLocaleString("en-IN")}`,
+    },
     { label: "Sector", key: "sector" },
     { label: "Locality", key: "locality" },
     { label: "Floor", key: "floor" },
@@ -48,9 +51,7 @@ export default function ComparisonModal({ properties, onClose }) {
               <tr key={row.label}>
                 <th>{row.label}</th>
                 {properties.map((p) => (
-                  <td key={p.id}>
-                    {row.fn ? row.fn(p) : p[row.key]}
-                  </td>
+                  <td key={p.id}>{row.fn ? row.fn(p) : p[row.key]}</td>
                 ))}
               </tr>
             ))}
