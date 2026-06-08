@@ -1,0 +1,191 @@
+.api-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+}
+
+.api-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(22, 33, 34, 0.4);
+  animation: fadeIn var(--transition-base) both;
+}
+
+.api-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-10);
+  animation: slideUp var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.api-modal__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-2);
+}
+
+.api-modal__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.api-modal__input-wrap {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  transition: border-color var(--transition-fast);
+}
+
+.api-modal__input-wrap:focus-within {
+  border-color: var(--color-border-strong);
+}
+
+.api-modal__input {
+  width: 100%;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.api-modal__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.api-modal__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
+.api-modal__btn {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.api-modal__btn--primary {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  border: 1px solid var(--color-text);
+}
+
+.api-modal__btn--primary:hover {
+  background-color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+  color: var(--color-surface);
+}
+
+.api-modal__btn--secondary {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.api-modal__btn--secondary:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border-strong);
+}
+
+.api-modal__error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-bottom: var(--space-4);
+}
+
+.api-modal__link {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.api-modal__link:hover {
+  color: var(--color-accent-text);
+}
+
+.error-banner {
+  max-width: var(--max-width-narrow);
+  margin: var(--space-4) auto 0;
+  padding: var(--space-3) var(--space-5);
+  background-color: #faf0ee;
+  border: 1px solid #e8d0cc;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  text-align: center;
+  animation: fadeIn var(--transition-base) both;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-5);
+  }
+
+  .search-section {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .search-section__title {
+    font-size: var(--font-size-xl);
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-panel {
+    max-width: 100%;
+  }
+
+  .comparison-panel {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .comparison-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .header__tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar__form {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .search-bar__submit {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-3);
+  }
+
+  .detail__specs {
+    grid-template-columns: 1fr;
+  }
+}

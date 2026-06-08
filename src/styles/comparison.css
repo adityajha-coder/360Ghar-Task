@@ -1,0 +1,172 @@
+.comparison-tray {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-8);
+  animation: slideUp var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.comparison-tray__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comparison-tray__info {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.comparison-tray__count {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.comparison-tray__actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.comparison-tray__btn {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.comparison-tray__btn--primary {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  border: 1px solid var(--color-text);
+}
+
+.comparison-tray__btn--primary:hover {
+  background-color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+  color: var(--color-surface);
+}
+
+.comparison-tray__btn--secondary {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.comparison-tray__btn--secondary:hover {
+  background-color: var(--color-bg-alt);
+  border-color: var(--color-border-strong);
+}
+
+.comparison-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+}
+
+.comparison-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(22, 33, 34, 0.4);
+  animation: fadeIn var(--transition-base) both;
+}
+
+.comparison-panel {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  max-height: 85vh;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow-y: auto;
+  animation: slideUp var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.comparison__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-surface);
+  z-index: 5;
+}
+
+.comparison__title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.comparison__close-btn {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-surface);
+  background-color: var(--color-text);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.comparison__close-btn:hover {
+  background-color: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+  color: var(--color-surface);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-4) var(--space-6);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.comparison-table th {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  white-space: nowrap;
+  width: 120px;
+}
+
+.comparison-table td {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.comparison-table__prop-name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
